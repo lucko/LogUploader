@@ -1,0 +1,8 @@
+name: ${project.name}
+version: ${project.version}
+main: me.lucko.loguploader.LogUploaderPlugin
+author: Luck
+
+commands:
+  uploadlog:
+    permission: loguploader.use
