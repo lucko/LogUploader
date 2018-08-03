@@ -35,8 +35,8 @@ public class LogUploaderPlugin extends JavaPlugin {
                     ByteStreams.copy(in, out);
                 }
 
-                String url = Bytebin.postCompressedContent(byteOut.toByteArray());
-                sender.sendMessage(ChatColor.RED + "Upload complete. URL: " + url);
+                String id = Bytebin.postCompressedContent(byteOut.toByteArray());
+                sender.sendMessage(ChatColor.RED + "Upload complete. URL: https://bytebin.lucko.me/" + id);
             } catch (IOException e) {
                 e.printStackTrace();
             }
