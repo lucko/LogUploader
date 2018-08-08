@@ -80,7 +80,7 @@ public final class HttpClient {
         public Response intercept(Chain chain) throws IOException {
             Request orig = chain.request();
             Request modified = orig.newBuilder()
-                    .header("User-Agent", "spark-plugin")
+                    .header("User-Agent", "log-uploader-plugin")
                     .build();
 
             return chain.proceed(modified);
