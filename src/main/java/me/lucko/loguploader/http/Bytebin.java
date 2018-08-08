@@ -40,13 +40,13 @@ import java.nio.charset.StandardCharsets;
  */
 public final class Bytebin {
 
-    /** Media type for JSON data */
-    private static final MediaType JSON_TYPE = MediaType.parse("application/json; charset=utf-8");
+    /** Media type for plain text data */
+    private static final MediaType PLAIN_TYPE = MediaType.parse("text/plain; charset=utf-8");
     /** The URL used to upload sampling data */
     private static final String UPLOAD_ENDPOINT = "https://bytebin.lucko.me/post";
 
     public static String postCompressedContent(byte[] buf) throws IOException {
-        RequestBody body = RequestBody.create(JSON_TYPE, buf);
+        RequestBody body = RequestBody.create(PLAIN_TYPE, buf);
 
         Request.Builder requestBuilder = new Request.Builder()
                 .url(UPLOAD_ENDPOINT)
